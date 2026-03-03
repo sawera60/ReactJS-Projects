@@ -1,5 +1,5 @@
-const Todos = () => {
-    
+const Todos = ({ data, deleteTodo, setId }) => {
+
 
     return (
         <div className="mt-8 px-4">
@@ -19,27 +19,36 @@ const Todos = () => {
                         </tr>
                     </thead>
 
-                    <tbody>
+                    {
+                        data.map((item) => {
+                            return (
+                                <>
+                                    <tbody>
 
-                        <tr>
-                            <td>Buy Groceries</td>
-                            <td>Milk, eggs, bread, and fruits</td>
-                            <td>
+                                        <tr>
+                                            <td>{item.title}</td>
+                                            <td>{item.description}</td>
+                                            <td>
 
-                                <div className="flex gap-2 mt-3 mb-2.5">
-                                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4.5 py-2.5  rounded-md text-[15px] font-medium cursor-pointer">
-                                        Edit
-                                    </button>
-                                    <button className="bg-red-500 hover:bg-red-600 text-white px-4.5 py-2.5 rounded-md text-[15px] font-medium cursor-pointer">
-                                        Delete
-                                    </button>
-                                </div>
+                                                <div className="flex gap-2 mt-3 mb-2.5">
+                                                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4.5 py-2.5  rounded-md text-[15px] font-medium cursor-pointer" onClick={()=>setId(item.id)}>
+                                                        Edit
+                                                    </button>
+                                                    <button className="bg-red-500 hover:bg-red-600 text-white px-4.5 py-2.5 rounded-md text-[15px] font-medium cursor-pointer" onClick={() => deleteTodo(item.id)}>
+                                                        Delete
+                                                    </button>
+                                                </div>
 
 
-                            </td>
-                        </tr>
-                      
-                    </tbody>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </>
+                            )
+                        })
+                    }
+
                 </table>
             </div>
         </div>
