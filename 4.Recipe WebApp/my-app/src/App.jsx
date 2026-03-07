@@ -1,11 +1,12 @@
-import Navbar from "./Components/Navbar"
+import Home from "./Components/Home"
+import PopularSlider from "./Components/PopularSlider"
 
 function App() {
 
   return (
     <>
-     
-      <Navbar />
+      <Home />
+      <PopularSlider />
     </>
   )
 }
