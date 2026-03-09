@@ -13,7 +13,7 @@ const ArrowButton = ({ className, onClick, direction }) => (
     aria-label={direction === 'next' ? 'Next slide' : 'Previous slide'}
   >
     <span className='text-white text-xl leading-none'>
-      {direction === 'next' ? '›' : '‹'}
+      {direction === 'next' ? '>' : '<'}
     </span>
   </button>
 )
@@ -60,11 +60,13 @@ const PopularSlider = () => {
           {data.map((meal) => {
             return (
               <div className='px-2'>
+                <div className='overflow-hidden rounded-lg'>
                 <img
                   src={meal.strMealThumb}
                   alt={meal.strMeal}
-                  className='w-full h-[220px] object-cover rounded-lg'
+                  className='w-full h-[220px] object-cover rounded-lg transition-transform duration-300 ease-out hover:scale-125'
                 />
+                </div>
               </div>
             )
           })}

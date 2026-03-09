@@ -19,7 +19,7 @@ function App() {
         <Sidebar />
         <Rightbar />
       </div>
-      
+    
 
     </div>
   )

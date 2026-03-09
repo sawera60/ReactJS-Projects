@@ -27,6 +27,7 @@ function App() {
 
   ])
 
+  const [id,setId]= useState("")
   const deleteTodo=(id)=>{
     const newTodo= todo.filter((item)=> item.id !== id)
     setTodo(newTodo)
@@ -36,8 +37,8 @@ function App() {
       <div className="container">
         <h1 className="text-center text-purple-700 text-3xl font-bold mt-4"> TODO List </h1>
       </div>
-      <Form data={todo} setTodo={setTodo} />
-      <Todos data={todo} deleteTodo={deleteTodo} />
+      <Form data={todo} setTodo={setTodo} id={id} setId={setId} />
+      <Todos data={todo} deleteTodo={deleteTodo} setId={setId} />
     </>
   )
 }

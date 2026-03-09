@@ -13,7 +13,7 @@ const ArrowButton = ({ className, onClick, direction }) => (
         aria-label={direction === 'next' ? 'Next slide' : 'Previous slide'}
     >
         <span className='text-white text-xl leading-none'>
-            {direction === 'next' ? '›' : '‹'}
+            {direction === 'next' ? '>' : '<'}
         </span>
     </button>
 )
@@ -42,7 +42,7 @@ const TrendingSlider = () => {
     var settings = {
 
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
         speed: 2000,
@@ -55,16 +55,18 @@ const TrendingSlider = () => {
 
     return (
         <>
-            <div className='container  mt-6 mb-6  px-4'>
+            <div className='container mt-6 mb-6 px-4'>
                 <Slider {...settings}>
                     {data.map((meal) => {
                         return (
                             <div className='px-2'>
+                                <div className='overflow-hidden rounded-lg'>
                                 <img
                                     src={meal.strMealThumb}
                                     alt={meal.strMeal}
-                                    className='w-full h-[220px] object-cover rounded-lg'
+                                    className='w-full h-[220px] object-cover rounded-lg transition-transform duration-300 ease-out hover:scale-125'
                                 />
+                                </div>
                             </div>
                         )
                     })}

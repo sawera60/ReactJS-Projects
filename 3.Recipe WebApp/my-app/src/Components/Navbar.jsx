@@ -12,7 +12,7 @@ const Navbar = () => {
                 <FaSearch />
 
             </div>
-            <div className="right flex gap-5 hover:bg-blue-950 p-2 rounded-lg cursor-pointer">
+            <div className="right flex gap-5 p-2 rounded-lg cursor-pointer">
                 <h3>Indian</h3>
                 <h3>American</h3>
                 <h3>British</h3>
